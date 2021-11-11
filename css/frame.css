@@ -1,4 +1,37 @@
 /* 홈페이지의 테두리나 메뉴 등의 공토적 디자인 요솔를 관리하는 css파일 */
 body {
-  background: url("media/background.jpg") repeat fixed 50% 50%;
+  background: url("../media/background.jpg") repeat fixed 50% 50%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+header {
+  text-align: center;
+}
+#menubar {
+  background-color: white;
+  border-radius: 5px;
+}
+#menubar ul {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0px;
+  padding: 15px 0px;
+  width: auto;
+  text-align: center;
+}
+#menubar ul li {
+  display: inline-block;
+  list-style-type: none;
+  padding: 10px 30px;
+}
+#menubar ul li a {
+  padding: 10px;
+  text-decoration: none;
+  font-size: large;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+}
+#menubar ul li a:hover {
+  color: white;
+  background-color: pink;
 }
