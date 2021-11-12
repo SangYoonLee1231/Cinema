@@ -1,0 +1,28 @@
+#space {
+  margin: 0px;
+  padding: 30px;
+}
+.movie_list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 150px;
+}
+h2 {
+  text-align: center;
+  background-color: white;
+  padding: 15px;
+}
+.image {
+  position: relative;
+  opacity: 0.7;
+  transition: all 0.3s ease-in-out;
+}
+.image:hover {
+  opacity: 1;
+}
+.text {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}
