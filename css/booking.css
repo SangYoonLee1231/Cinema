@@ -1,0 +1,18 @@
+#movie-select,
+#date-time-select,
+#seat-chart-div {
+  display: flex;
+  justify-content: center;
+}
+table {
+  border-spacing: 10px;
+}
+th {
+  width: 40px;
+  height: 40px;
+  background-color: silver;
+  color: white;
+}
+th:hover {
+  background-color: #cc73e1;
+}

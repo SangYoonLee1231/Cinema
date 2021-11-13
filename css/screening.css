@@ -1,7 +1,3 @@
-#space {
-  margin: 0px;
-  padding: 30px;
-}
 .movie_list {
   display: flex;
   flex-direction: row;
@@ -20,6 +16,7 @@ h2 {
 }
 .image:hover {
   opacity: 1;
+  transform: scale(1.2);
 }
 .text {
   display: flex;

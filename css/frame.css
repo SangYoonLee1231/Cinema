@@ -35,3 +35,7 @@ header {
   color: white;
   background-color: pink;
 }
+#space {
+  margin: 0px;
+  padding: 30px;
+}
