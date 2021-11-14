@@ -1,8 +1,12 @@
-#movie-select,
+#movie-select-div,
 #date-time-select,
 #seat-chart-div {
   display: flex;
   justify-content: center;
+}
+#movie-select {
+  padding-top: 15px;
+  background-color: white;
 }
 table {
   border-spacing: 10px;
@@ -15,4 +19,7 @@ th {
 }
 th:hover {
   background-color: #cc73e1;
+}
+.click {
+  background-color: red;
 }

@@ -21,34 +21,29 @@
         <li><a href="guest_book.html">방명록</a></li>
       </ul>
     </nav>
+
     <article>
       <div id="space"></div>
-      <div id="movie-select">
-        <br />
-        <form action="">
-          <input type="radio" id="mo" name="movie" value="모기디슈" />
-          <label for="mo">모기디슈</label>
-          <input type="radio" id="gr" name="movie" value="그래비티" />
-          <label for="gr">그래비티</label>
-          <input
-            type="radio"
-            id="venom"
-            name="movie"
-            value="베놈2: 렛 데어 비 카니지"
-          />
-          <label for="venom">베놈2: 렛 데어 비 카니지</label>
-          <input type="radio" id="ven" name="movie" value="벤허" />
-          <label for="ven">벤허</label>
-          <input type="radio" id="rok" name="movie" value="록키" />
-          <label for="rok">록키</label>
-          <input type="radio" id="sou" name="movie" value="사운드 오브 뮤직" />
-          <label for="sou">사운드 오브 뮤직</label>
-        </form>
+
+      <div id="movie-select-div">
+        <table id="movies">
+          <tr>
+            <th class="movie-name" id="mo">모기디슈</th>
+            <th class="movie-name" id="gr">그래비티</th>
+            <th class="movie-name" id="venom">베놈2: 렛 데어 비 카니지</th>
+            <th class="movie-name" id="ven">벤허</th>
+            <th class="movie-name" id="rok">록키</th>
+            <th class="movie-name" id="sou">사운드 오브 뮤직</th>
+          </tr>
+        </table>
       </div>
+
       <div id="space"></div>
+
       <div id="date-time-select">
         <h4>날짜</h4>
-        <select id="date" value="5">
+        <select id="date" value="6">
+          <option value="0"></option>
           <option value="1">11/21(일)</option>
           <option value="2">11/22(월)</option>
           <option value="3">11/23(화)</option>
@@ -56,16 +51,19 @@
           <option value="5">11/25(목)</option>
         </select>
         <h4>시간</h4>
-        <select id="time" value="4">
+        <select id="time" value="5">
+          <option value="0"></option>
           <option value="1">10:00</option>
           <option value="2">13:00</option>
           <option value="3">16:00</option>
           <option value="4">19:00</option>
         </select>
       </div>
+
       <div id="space"></div>
+
       <div id="seat-chart-div">
-        <table>
+        <table id="table-seat">
           <tr class="rowA">
             <th id="A1">A1</th>
             <th id="A2">A2</th>
@@ -127,6 +125,10 @@
             <th id="E10">E10</th>
           </tr>
         </table>
+      </div>
+
+      <div>
+        <button id="submit">제출</button>
       </div>
     </article>
     <script src="js/booking.js"></script>
