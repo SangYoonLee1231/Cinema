@@ -39,3 +39,19 @@ header {
   margin: 0px;
   padding: 30px;
 }
+.title {
+  text-align: center;
+  background-color: white;
+  padding: 20px;
+}
+a {
+  text-decoration: none;
+}
+a:visited {
+  color: black;
+}
+p {
+  text-align: center;
+  background-color: #fff0f0;
+  padding: 15px;
+}
