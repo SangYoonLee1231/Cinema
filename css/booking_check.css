@@ -1,0 +1,12 @@
+#booking-info-div {
+  display: flex;
+  justify-content: center;
+}
+ul {
+  background-color: white;
+}
+h2 {
+  text-align: center;
+  background-color: white;
+  padding: 20px 0px;
+}

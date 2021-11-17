@@ -125,6 +125,7 @@ function onBtnClick(event) {
     movie_list.push(seat_id);
 
     localStorage.setItem(movie_count, JSON.stringify(movie_list));
+    localStorage.setItem("movie count", movie_count);
 
     const li = document.createElement("li");
     const movieName = document.createElement("h4");
@@ -158,7 +159,6 @@ function onBtnClick(event) {
     movie_list.length = 0;
 
     // 시간, 날짜 모두 겹치는지 확인해서 localStorage에 추가
-    // localStorage 저장시, 예매내역 HTMl태그 JS에서 생성, 추가
     // (이 때, 예매 내역 '삭제' 기능 태그,
     // 예매 내역 '확인' 기능도 만들어야함)
   }
