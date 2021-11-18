@@ -18,25 +18,45 @@
         <li><a href="current.html">현재 상영작</a></li>
         <li><a href="upcoming.html">상영 예정작</a></li>
         <li><a href="booking.html">빠른 예매</a></li>
-        <li><a href="booking_check.html">예매 확인</a></li>
+        <li><a href="booking_check.html">결제 및 예매 확인</a></li>
       </ul>
     </nav>
     <article>
-      <h1 class="title">예매 확인</h1>
+      <h1 class="title">결제 및 예매 확인</h1>
       <p>
-        예매한 내용이 맞으신 지 다시 한 번 확인하신 후 [결제] 버튼을 눌러주세요.
+        예매한 내용이 맞으신 지 다시 한 번 확인하신 후 [결제하기] 버튼을 눌러
+        결제를 진행해주세요.
         <br /><br />
-        만일 예매하신 내용을 변경하시려면 [취소] 버튼을 변경할 항목을 취소한
-        다음<br />'빠른 예매' 페이지에서 다시 예매를 진행해주시기 바랍니다.
+        결제를 완료하시면 하단의 '예매 내역 확인'에 예매하신 표의 정보가
+        표시됩니다.
       </p>
 
       <div id="space"></div>
 
-      <h2>예매 정보</h2>
+      <h2>장바구니</h2>
       <div id="booking-info-div">
         <ul id="booking-info">
           <!--예매 정보 li 추가-->
         </ul>
+      </div>
+
+      <div id="space"></div>
+
+      <div id="payment-div">
+        <button id="payment">결제하기</button>
+      </div>
+
+      <div id="space"></div>
+
+      <h2>예매 내역 확인</h2>
+      <div>
+        <ul id="payment-finished">
+          <!--결제 금액 정보 li 추가-->
+        </ul>
+      </div>
+
+      <div>
+        <p>표의 가격은 한 좌석당 9000원입니다.</p>
       </div>
     </article>
     <script src="js/booking_check.js"></script>

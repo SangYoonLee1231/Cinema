@@ -5,8 +5,16 @@
 ul {
   background-color: white;
 }
+li {
+  list-style: none;
+}
 h2 {
   text-align: center;
   background-color: white;
   padding: 20px 0px;
+}
+#payment-div,
+#payment-finished {
+  text-align: center;
+  padding-left: 0px;
 }

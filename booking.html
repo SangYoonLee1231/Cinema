@@ -18,20 +18,21 @@
         <li><a href="current.html">현재 상영작</a></li>
         <li><a href="upcoming.html">상영 예정작</a></li>
         <li><a href="booking.html">빠른 예매</a></li>
-        <li><a href="booking_check.html">예매 확인</a></li>
+        <li><a href="booking_check.html">결제 및 예매 확인</a></li>
       </ul>
     </nav>
 
     <article>
       <h1 class="title">빠른 예매</h1>
       <p>
-        모든 항목을 선택한 후 [예매하기] 버튼을 눌러주세요. <br />
-        예매가 끝나셨으면 [예매 완료] 버튼을 클릭하여 결제를 진행해주세요.
+        모든 항목을 선택한 후 [장바구니 추가] 버튼을 눌러주세요. <br />
+        선택이 모두 끝나셨으면 [장바구니 확인 및 결제] 버튼을 클릭하여 결제를
+        진행하실 수 있습니다.
       </p>
       <div id="space"></div>
 
       <div id="movie-select-div">
-        <h3>영화 선택</h3>
+        <h3 id="movie-select">영화 선택</h3>
         <table id="movies">
           <tr>
             <th class="movie-name" id="mo">모기디슈</th>
@@ -56,6 +57,7 @@
           <option value="4">11/24(수)</option>
           <option value="5">11/25(목)</option>
         </select>
+        &nbsp;
         <h4>시간</h4>
         <select id="time" value="5">
           <option value="0"></option>
@@ -69,7 +71,7 @@
       <div id="space"></div>
 
       <div id="seat-chart-div">
-        <h3>좌석 선택</h3>
+        <h3 id="seat-select">좌석 선택</h3>
         <table id="table-seat">
           <tr class="rowA">
             <th id="A1">A1</th>
@@ -136,10 +138,16 @@
 
       <div id="space"></div>
 
+      <div>
+        <p>표의 가격은 한 좌석당 9000원입니다.</p>
+      </div>
+
       <div id="submit-button">
-        <button id="submit">예매하기</button>
+        <button id="submit">장바구니 추가</button>
         &nbsp;&nbsp;
-        <button onclick="location.href='booking_check.html'">예매 완료</button>
+        <button onclick="location.href='booking_check.html'">
+          장바구니 확인 및 결제
+        </button>
       </div>
 
       <div id="movie-info-div">

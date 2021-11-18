@@ -1,10 +1,19 @@
 /* 홈페이지의 테두리나 메뉴 등의 공토적 디자인 요솔를 관리하는 css파일 */
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
 body {
   background: url("../media/background.jpg") repeat fixed 50% 50%;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Pretendard-Regular", "Segoe UI", Tahoma, Geneva, Verdana,
+    sans-serif;
 }
 header {
   text-align: center;
+  background-color: white;
 }
 #menubar {
   background-color: white;
@@ -54,4 +63,8 @@ p {
   text-align: center;
   background-color: #fff0f0;
   padding: 15px;
+}
+button {
+  padding: 5px 10px;
+  font-size: large;
 }

@@ -9,6 +9,7 @@ let movie_color = false;
 function handleMovieClick(event) {
   if (event.target.id == "movie-select-div") {
   } else if (event.target.id == "movies") {
+  } else if (event.target.id == "movie-select") {
   } else if (movie_color == false) {
     movie = event.target;
     movie.classList.add("click");
@@ -52,32 +53,10 @@ time.addEventListener("change", changeTime);
 // 좌석 선택 영역
 let seat = null;
 let seat_id = [];
-//let seat_color = false;
-/*
+
 function handleClick(event) {
   if (event.target.id == "table-seat") {
-  } else if (event.target.id == "seat-chart-div") {
-  } else if (seat_color == false) {
-    seat = event.target;
-    seat.classList.add("click");
-    seat_id = seat.id;
-    seat_color = true;
-  } else {
-    if (event.target.id == seat_id) {
-      seat_id = null;
-      seat.classList.toggle("click");
-      seat_color = false;
-    } else {
-      event.target.classList.add("click");
-      seat.classList.remove("click");
-      seat = event.target;
-      seat_id = seat.id;
-    }
-  }
-}
-*/
-function handleClick(event) {
-  if (event.target.id == "table-seat") {
+  } else if (event.target.id == "seat-select") {
   } else if (event.target.id == "seat-chart-div") {
   } else {
     seat = event.target;
@@ -116,56 +95,36 @@ function onBtnClick(event) {
     selectedTime == null ||
     seat_id == null
   ) {
-    console.log("모든 항목을 선택해주세요.");
-  } else {
-    movie_count += 1;
-    movie_list.push(movie.innerText);
-    movie_list.push(selectedDate);
-    movie_list.push(selectedTime);
-    movie_list.push(seat_id);
+    alert("모든 항목을 선택해주세요.");
+  } /*else if (
+    localStorage.getItem(1) &&
+    selectedDate == JSON.parse(localStorage.getItem(movie_count))[1] &&
+    selectedTime == JSON.parse(localStorage.getItem(movie_count))[2]
+  ) {
+    alert("이미 같은 시간에 예매한 내역이 있습니다.");
+  }*/ else {
+    let answer = confirm("선택하신 내용을 예매 목록에 추가하시겠습니까?");
+    if (answer) {
+      movie_count += 1;
+      movie_list.push(movie.innerText);
+      movie_list.push(selectedDate);
+      movie_list.push(selectedTime);
+      movie_list.push(seat_id);
 
-    localStorage.setItem(movie_count, JSON.stringify(movie_list));
-    localStorage.setItem("movie count", movie_count);
+      localStorage.setItem(movie_count, JSON.stringify(movie_list));
+      localStorage.setItem("movie count", movie_count);
 
-    const li = document.createElement("li");
-    const movieName = document.createElement("h4");
-    const date = document.createElement("h4");
-    const time = document.createElement("h4");
-    const seatNum = document.createElement("h4");
-    //const button_info = document.createElement("button");
-    const button_delete = document.createElement("button");
+      alert("선택하신 내용이 예매 목록에 성공적으로 추가되었습니다.");
 
-    li.id = movie_count;
+      movie_list = [];
 
-    movieName.innerText = movie.innerText;
-    date.innerText = selectedDate;
-    time.innerText = "시간 : " + selectedTime;
-    seatNum.innerText = "좌석 : " + seat_id;
-
-    //button_info.innerText = "예매 하기";
-    //button_info.addEventListener("click", handleButtonInfo);
-
-    button_delete.innerText = "❌ 취소";
-    button_delete.addEventListener("click", deleteMovieList);
-
-    li.appendChild(movieName);
-    li.appendChild(date);
-    li.appendChild(time);
-    li.appendChild(seatNum);
-    //li.appendChild(button_info);
-    li.appendChild(button_delete);
-    movieInfo.appendChild(li);
-
-    movie_list.length = 0;
-
-    // 시간, 날짜 모두 겹치는지 확인해서 localStorage에 추가
-    // (이 때, 예매 내역 '삭제' 기능 태그,
-    // 예매 내역 '확인' 기능도 만들어야함)
+      // 시간, 날짜 모두 겹치는지 확인해서 localStorage에 추가
+      // (이 때, 예매 내역 '삭제' 기능 태그,
+      // 예매 내역 '확인' 기능도 만들어야함)
+    }
   }
 }
 button.addEventListener("click", onBtnClick);
-
-//function handleButtonInfo(event) {}
 
 function deleteMovieList(event) {
   const li = event.target.parentElement;
