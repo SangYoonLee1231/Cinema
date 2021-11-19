@@ -1,0 +1,26 @@
+div {
+  text-align: center;
+}
+span {
+  font-size: 25px;
+}
+h1 {
+  background-color: white;
+  text-align: center;
+  padding: 25px;
+}
+#main1-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+img {
+  position: relative;
+  opacity: 0.7;
+  transition: all 0.3s ease-in-out;
+}
+img:hover {
+  opacity: 1;
+  transform: scale(1.2);
+}

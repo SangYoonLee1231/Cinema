@@ -35,6 +35,7 @@ function printPaymentFin(PaymentInfo, ll) {
   const time = document.createElement("h4");
   const seatNum = document.createElement("h4");
   const deleteBtn = document.createElement("button");
+  const detailsBtn = document.createElement("button");
 
   li.id = ll;
 
@@ -43,6 +44,8 @@ function printPaymentFin(PaymentInfo, ll) {
   date.innerText = PaymentInfo[1];
   time.innerText = "시간 : " + PaymentInfo[2];
   seatNum.innerText = "좌석 : " + PaymentInfo[3];
+  detailsBtn.innerText = "상세 내역";
+  detailsBtn.addEventListener("click", handleDetailsBtn);
   deleteBtn.innerText = "❌ 예매 취소";
   deleteBtn.addEventListener("click", deletePaymentList);
 
@@ -50,8 +53,50 @@ function printPaymentFin(PaymentInfo, ll) {
   li.appendChild(date);
   li.appendChild(time);
   li.appendChild(seatNum);
+  li.appendChild(detailsBtn);
   li.appendChild(deleteBtn);
   paymentFinished.appendChild(li);
+}
+
+function handleDetailsBtn(event) {
+  console.log(event);
+
+  const settings =
+    "toolbar=0,directories=0,status=no,menubar=0,scrollbars=auto,resizable=no,height=600,width=600,left=0,top=0";
+  const windowObj = window.open("details.html", "상세 내역", settings);
+  console.log(document);
+  console.log(windowObj);
+  //const detailList = windowObj.document.getElementById("detail-list");
+  console.log(windowObj.document.getElementById("detail-list"));
+  /*
+  const li2 = document.createElement("li");
+  const movieName2 = document.createElement("h4");
+  const date2 = document.createElement("h4");
+  const time2 = document.createElement("h4");
+  const seatNum2 = document.createElement("h4");
+  */
+  const detailLi = event.target.parentElement;
+  /*
+  movieName2.innerText = detailLi.children[0].innerText;
+  date2.innerText = detailLi.children[1].innerText;
+  time2.innerText = detailLi.children[2].innerText;
+  seatNum2.innerText = detailLi.children[3].innerText;
+  */
+  windowObj.document.getElementById("1").innerText =
+    detailLi.children[0].innerText;
+  windowObj.document.getElementById("2").innerText =
+    detailLi.children[1].innerText;
+  windowObj.document.getElementById("3").innerText =
+    detailLi.children[2].innerText;
+  windowObj.document.getElementById("4").innerText =
+    detailLi.children[3].innerText;
+
+  //li2.append(movieName2);
+  //li2.append(date2);
+  //li2.append(time2);
+  //li2.append(seatNum2);
+
+  //detailList.appendChild(li2);
 }
 
 function deletePaymentList(event) {
@@ -61,10 +106,6 @@ function deletePaymentList(event) {
     const li = event.target.parentElement;
 
     localStorage.removeItem(li.id);
-    //localStorage.setItem(
-    //  "l",
-    //  JSON.stringify(parseInt(localStorage.getItem("l")) - 1)
-    //);
     li.remove();
   }
 }
@@ -102,10 +143,6 @@ function deleteBookingList(event) {
     const li = event.target.parentElement;
 
     localStorage.removeItem(li.id);
-    //localStorage.setItem(
-    //  "movie count",
-    //  JSON.stringify(parseInt(localStorage.getItem("movie count")) - 1)
-    //);
     li.remove();
   }
 }
@@ -116,7 +153,7 @@ paymentBtn.addEventListener("click", handlePayment);
 
 function handlePayment() {
   const movie_count = localStorage.getItem("movie count");
-  if (movie_count == 0) {
+  if (movie_count == 0 || movie_count == null) {
     alert("장바구니가 비어있습니다.");
   } else {
     k = 1;
